@@ -1,0 +1,14 @@
+#!/bin/sh
+
+docker build -t github-runner ./
+docker run \
+  -it \
+  -e ACCESS_TOKEN= \
+  -e REPO_URL= \
+  -e RUNNER_NAME= \
+  -e RUNNER_SCOPE= \
+  -e LABELS= \
+  -e RUNNER_WORKDIR=/tmp/runner/work \
+  -e DISABLE_AUTO_UPDATE= \
+  -e EPHEMERAL= \
+  github-runner:latest \
